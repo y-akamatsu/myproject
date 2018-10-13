@@ -3,7 +3,7 @@ const app = express();
 
 // "/" => "Hi there!"
 app.get("/", function(req, res){
-    res.send("Hi there!");
+    res.render("home.ejs");
 });
 
 app.get("/bye", function(req, res){
@@ -12,6 +12,10 @@ app.get("/bye", function(req, res){
 
 app.get("/cat", function(req, res){
     res.send("MEOW");
+});
+
+app.get("*", function(req, res){
+    res.send("YOU ARE STAR!");
 });
 
 app.listen(3000, function(){
